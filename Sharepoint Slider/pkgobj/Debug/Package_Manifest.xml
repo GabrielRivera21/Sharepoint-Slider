@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="c2e55b97-99c2-4b80-a06f-5c834755f49a" SharePointProductVersion="16.0">
+  <FeatureManifests>
+    <FeatureManifest Location="Sharepoint Slider_Feature1\Feature.xml" />
+  </FeatureManifests>
+</Solution>
