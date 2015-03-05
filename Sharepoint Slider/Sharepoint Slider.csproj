@@ -44,7 +44,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="Gaby Slider\SharePointProjectItem.spdata">
-      <SharePointProjectItemId>{7702e566-9f3b-4336-a008-883e2e10678a}</SharePointProjectItemId>
+      <SharePointProjectItemId>{aa3e9d9a-f4b3-4eae-8a14-35dbdd298b17}</SharePointProjectItemId>
     </None>
     <None Include="packages.config" />
     <None Include="Pages\SharePointProjectItem.spdata">
@@ -54,21 +54,29 @@
     <Content Include="Content\default\bullets.png" />
     <Content Include="Content\default\default.css" />
     <Content Include="Content\default\loading.gif" />
+    <Content Include="Elements.xml" />
     <Content Include="Gaby Slider\Elements.xml">
       <OpcRelationship>feature-elementmanifest</OpcRelationship>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Images\nemo.jpg" />
     <Content Include="Images\toystory.jpg" />
     <Content Include="Images\up.jpg" />
     <Content Include="Images\walle.jpg" />
-    <Content Include="Pages\Elements.xml" />
+    <Content Include="Pages\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Pages\Default.aspx" />
+    <None Include="SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{dd5ec016-bac1-4f2c-a287-72d96f3e095c}</SharePointProjectItemId>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\jquery-1.9.1.min.map" />
     <None Include="Scripts\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{1fd5a3b3-d356-4050-96b4-3dd55778a368}</SharePointProjectItemId>
     </None>
+    <Content Include="Pages\Gaby_Slider.aspx" />
     <Content Include="Scripts\Elements.xml" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />
@@ -110,6 +118,13 @@
     <AppManifestFile Include="AppManifest.xml">
       <SubType>Designer</SubType>
     </AppManifestFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

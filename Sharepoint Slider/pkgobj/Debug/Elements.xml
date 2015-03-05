@@ -1,15 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
-  <ClientWebPart Name="Gaby Slider" Title="Gaby Slider Title" Description="Gaby Slider Description" DefaultWidth="300" DefaultHeight="200">
+  <ClientWebPart Name="Gaby Sharepoint Slider" Title="Gaby Sharepoint Slider" 
+                 Description="Gaby Slider Description" 
+                 DefaultWidth="300" DefaultHeight="500">
 
     <!-- Content element identifies the location of the page that will render inside the client web part
          Properties are referenced on the query string using the pattern _propertyName_
          Example: Src="~appWebUrl/Pages/ClientWebPart1.aspx?Property1=_property1_" -->
-    <Content Type="html" Src="~appWebUrl/Pages/Default.aspx?{StandardTokens}" />
+    <Content Type="html" Src="~appWebUrl/Pages/Gaby_Slider.aspx?ImageLibrary=_ImageLibrary_&amp;SliderInterval=_SliderInterval_&amp;SliderHeight=_SliderHeight_&amp;SliderWidth=_SliderWidth_&amp;{StandardTokens};editmode=_editMode_" />
 
     <!-- Define properties in the Properties element.
          Remember to put Property Name on the Src attribute of the Content element above. -->
     <Properties>
+      <Property
+          Name="ImageLibrary"
+          Type="string"
+          RequiresDesignerPermission="true"
+          DefaultValue="ImageLibrary"
+          WebCategory="Slider Properties"
+          WebDisplayName="Image Library Name">
+      </Property>
+      <Property
+        Name="SliderInterval"
+        Type="int"
+        RequiresDesignerPermission="true"
+        DefaultValue="5000"
+        WebCategory="Slider Properties"
+        WebDisplayName="Interval for the Slider">
+      </Property>
+      <Property 
+        Name="SliderHeight"
+        Type="string"
+        RequiresDesignerPermission="true"
+        DefaultValue="500px"
+        WebCategory="Slider Properties"
+        WebDisplayName="Slider Height"></Property>
+      <Property
+        Name="SliderWidth"
+        Type="string"
+        RequiresDesignerPermission="true"
+        DefaultValue="100%"
+        WebCategory="Slider Properties"
+        WebDisplayName="Slider Width"></Property>
     </Properties>
 
   </ClientWebPart>

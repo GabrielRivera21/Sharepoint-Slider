@@ -29,54 +29,16 @@
 
 <%-- The markup in the following Content element will be placed in the TitleArea of the page --%>
 <asp:Content ContentPlaceHolderID="PlaceHolderPageTitleInTitleArea" runat="server">
-    Slider Web Part
+    
 </asp:Content>
 
 <%-- The markup and script in the following Content element will be placed in the <body> of the page --%>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
-
     <div id="slider-boot">
 
     </div>
 
-    <div id="content">
-            <!-- Placeholders for properties -->
-            String property: <span id="strProp"></span><br />
-            Integer property: <span id="intProp"></span><br />
-            Boolean property: <span id="boolProp"></span><br />
-            Enumeration property: <span id="enumProp"></span><br />
-        </div>
-
-    <!-- Main JavaScript function, controls the rendering
-         logic based on the custom property values -->
-    <script lang="javascript">
-        "use strict";
-
-        var params = document.URL.split("?")[1].split("&");
-        var strProp;
-        var intProp;
-        var boolProp;
-        var enumProp;
-
-        // Extracts the property values from the query string.
-        for (var i = 0; i < params.length; i = i + 1) {
-            var param = params[i].split("=");
-            if (param[0] == "strProp")
-                strProp = decodeURIComponent(param[1]);
-            else if (param[0] == "intProp")
-                intProp = parseInt(param[1]);
-            else if (param[0] == "boolProp")
-                boolProp = (param[1] == "true");
-            else if (param[0] == "enumProp")
-                enumProp = decodeURIComponent(param[1]);
-        }
-
-        document.getElementById("strProp").innerText = strProp;
-        document.getElementById("intProp").innerText = intProp;
-        document.getElementById("boolProp").innerText = boolProp;
-        document.getElementById("enumProp").innerText = enumProp;
-    </script>
-
+    
 </asp:Content>
 
 

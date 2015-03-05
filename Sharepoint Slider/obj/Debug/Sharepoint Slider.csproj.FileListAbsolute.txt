@@ -1,3 +1,4 @@
 C:\Users\Gabriel\Documents\Sharepoint 2013 Apps\Sharepoint Slider\Sharepoint Slider\bin\Debug\Sharepoint Slider.pdb
 C:\Users\Gabriel\Documents\Sharepoint 2013 Apps\Sharepoint Slider\Sharepoint Slider\obj\Debug\Sharepoint Slider.dll
 C:\Users\Gabriel\Documents\Sharepoint 2013 Apps\Sharepoint Slider\Sharepoint Slider\obj\Debug\Sharepoint Slider.pdb
+C:\Users\Gabriel\Documents\Sharepoint 2013 Apps\Sharepoint Slider\Sharepoint Slider\obj\Debug\Sharepoint Slider.csprojResolveAssemblyReference.cache
