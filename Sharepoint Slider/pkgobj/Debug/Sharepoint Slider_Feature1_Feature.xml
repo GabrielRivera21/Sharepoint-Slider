@@ -16,6 +16,8 @@
     <ElementFile Location="Content\default\bullets.png" />
     <ElementFile Location="Content\default\default.css" />
     <ElementFile Location="Content\default\loading.gif" />
+    <ElementFile Location="Content\blue.css" />
+    <ElementFile Location="Content\default.css" />
     <ElementManifest Location="Images\Elements.xml" />
     <ElementFile Location="Images\AppIcon.png" />
     <ElementFile Location="Images\nemo.jpg" />

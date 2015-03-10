@@ -2,9 +2,17 @@
 .carousel {
   height: 100%;
 }
+
 /* Since positioning the image, we need to help out the caption */
 .carousel-caption {
   z-index: 10;
+  filter: alpha(opacity=60);
+  opacity: 0.60;
+  bottom: 0;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  padding-top: 5px;
 }
 
 /* Declare heights because of positioning of img element */
@@ -20,11 +28,20 @@
   height: 100%;
 }
 
+.carousel-inner > .item > a > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  height: 100%;
+}
+
 @media (min-width: 768px) {
     /* Bump up size of carousel content */
     .carousel-caption p {
         margin-bottom: 20px;
         font-size: 21px;
         line-height: 1.4;
+        width: 100%;
     }
 }

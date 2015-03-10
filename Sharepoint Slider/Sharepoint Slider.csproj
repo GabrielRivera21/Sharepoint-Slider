@@ -50,6 +50,8 @@
     <None Include="Pages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{3b2cdc0f-f1e6-42a6-ac92-316a6700997e}</SharePointProjectItemId>
     </None>
+    <Content Include="Content\blue.css" />
+    <Content Include="Content\default.css" />
     <Content Include="Content\default\arrows.png" />
     <Content Include="Content\default\bullets.png" />
     <Content Include="Content\default\default.css" />

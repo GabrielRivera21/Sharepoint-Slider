@@ -9,18 +9,18 @@ var listEnumerator;
 var currentlibrary;
 var library;
 
-//Slider CSS Properties Changes
-var slider_height;
-var slider_width;
+//Slider Properties Changes
 var slider_interval
 
 $(document).ready(function () {
+    debugger;
     hostWebUrl = decodeURIComponent(getQueryStringParameter('SPHostUrl'));
     appWebUrl = decodeURIComponent(getQueryStringParameter('SPAppWebUrl'));
     libraryName = decodeURIComponent(getQueryStringParameter("ImageLibrary"));
-    slider_height = decodeURIComponent(getQueryStringParameter("SliderHeight"));
-    slider_width = decodeURIComponent(getQueryStringParameter("SliderWidth"));
     slider_interval = decodeURIComponent(getQueryStringParameter("SliderInterval"));
+    //Adds the CSS style the User chooses
+    var themeColorCss = decodeURIComponent(getQueryStringParameter("SliderColors"));
+    $("head").append('<link rel="Stylesheet" type="text/css" href="../Content/' + themeColorCss + '.css" />');
     getLibraryFromUrl();
 });
 
@@ -35,7 +35,6 @@ function getLibraryFromUrl() {
 
 function IsListExist() {
     debugger;
-    //alert('check whether list is exist or not');  
     var isListAvail = false;
     listEnumerator = libraries.getEnumerator();
     while (listEnumerator.moveNext() && !isListAvail && libraryName != "") {
@@ -48,7 +47,7 @@ function IsListExist() {
         }
     }
     if (!isListAvail && libraryName != "") {
-        alert('Please select a Library that is in your site. You can select this at Slider Properties.');
+        console.log('Please select a Library that is in your site. You can select this at Slider Properties.');
     }
 
 }
@@ -76,27 +75,30 @@ function OnGetListItemSuccess() {
     if (itemCollection.get_count() > 0) {
         var enumerator = itemCollection.getEnumerator();
         //Constructs the Carousel
-        constructCarousel(itemCollection.get_count(), enumerator);
+        constructCarousel(enumerator);
+        //Controls the Interval the Slider changes images.
         $('.carousel').carousel({
             interval: slider_interval
         })
+        //Adjusts the iFrame
         adjustFrame();
     }
 }
 
 //Failure method  
 function OnGetListItemFailure(sender, args) {
-    alert('Failed to get user name. Error:' + args.get_message());
+    console.log('Failed to get user name. Error:' + args.get_message());
 }
 
 //Constructs the Carousel holder if one item exists
-function constructCarousel(itemNum, enumerator) {
+function constructCarousel(enumerator) {
     debugger;
+
     //Creates the Carousel
     $("#slider-boot").append('<div id="myCarousel" class="carousel slide" data-ride="carousel"></div>');
     $("#myCarousel").append('<ol class="carousel-indicators"></ol>');
     
-    //Creates the first item into the carousel
+    //Creates the container for the Carousel Images
     $("#myCarousel").append('<div class="carousel-inner" role="listbox"></div>');
 
     //Creates the prev & next button of the Carousel
@@ -112,50 +114,72 @@ function constructCarousel(itemNum, enumerator) {
     addImagesToCarousel(enumerator);
 }
 
-// Function to retrieve a query string value.
-// For production purposes you may want to use
-// a library to handle the query string.
-function getQueryStringParameter(paramToRetrieve) {
-    var params =
-        document.URL.split("?")[1].split("&");
-    var strParams = "";
-    for (var i = 0; i < params.length; i = i + 1) {
-        var singleParam = params[i].split("=");
-        if (singleParam[0] == paramToRetrieve)
-            return singleParam[1];
-    }
-}
-
 //Adds the Images to the Carousel by Viewing which images are active
 function addImagesToCarousel(enumerator) {
-    var i = 0;
+    debugger;
+    var i = 0; //index for indicator
     var ImageUrl;
+    var ImageCaption;
+    var ImageLink;
+
     while (enumerator.moveNext()) {
         var currentListItems = enumerator.get_current();
         var isActive = currentListItems.get_item("isActive");
         //get Image URL from current Item if it's active.
         if (isActive) {
-            if (i == 0) {
-                //Creates the Carousel Indicator
-                $(".carousel-indicators").append('<li data-target="#myCarousel" data-slide-to="0" class="active"></li>');
-                ImageUrl = currentListItems.get_item("FileRef");
-                $(".carousel-inner").append(
-                '<div class="item active">' +
-                    '<img src="' + ImageUrl + '" alt="Hello"/>' +
-                '</div>');
-                i = i + 1;
-            } else {
-                $(".carousel-indicators").append('<li data-target="#myCarousel" data-slide-to="' + i++ + '"></li>');
-                ImageUrl = currentListItems.get_item("FileRef");
-                $(".carousel-inner").append(
-                    '<div class="item">' +
-                        '<img src="' + ImageUrl + '" alt="Hello"/>' +
-                    '</div>');
-            }
-        }
+            //Retrieves the URL, Caption and Link for each image item.
+            ImageUrl = currentListItems.get_item("FileRef");
+            ImageCaption = currentListItems.get_item("Caption");
+            ImageLink = currentListItems.get_item("Links");
 
+            //For use with the first indexed image being inserted
+            var indicatorActive = "";
+            var itemActive = "";
+
+            //Container for caption
+            var containerCaption = '<div class="container">' +
+                                        '<div class="carousel-caption">' +
+                                            '<p>' + ImageCaption + '</p>' +
+                                        '</div>' +
+                                   '</div>';
+
+            //Links for the slider images.
+            var hrefTagStart = '<a href="' + ImageLink + '" target="_blank">'
+            var hrefTagEnd = "</a>";
+
+            //If no caption was found, remove the caption container
+            if (ImageCaption == null) {
+                ImageCaption = "";
+                containerCaption = "";
+            }
+            //If no ImageLink was found remove the tags for href
+            if (ImageLink == null) {
+                ImageLink = "";
+                hrefTagStart = "";
+                hrefTagEnd = "";
+            }
+            //If it's the first item being inserted it adds the active class
+            if (i == 0) {
+                indicatorActive = ' class="active"';
+                itemActive = ' active';
+            }
+
+            //Creates the Carousel Indicator
+            $(".carousel-indicators").append(
+                '<li data-target="#myCarousel" data-slide-to="' + i++ + '"' + indicatorActive + '></li>');
+
+            //Appends the Image to the slider with its caption
+            $(".carousel-inner").append(
+                 '<div class="item' + itemActive + '">' +
+                      hrefTagStart +
+                        '<img src="' + ImageUrl + '" alt="Hello"/>' +
+                      hrefTagEnd +
+                     containerCaption + 
+                 '</div>');
+        }
     }
 }
+
 
 function adjustFrame() {
     window.Communica = window.Communica || {};
@@ -178,18 +202,53 @@ function adjustFrame() {
         adjustSize: function () {
             var step = 30,
                 newHeight,
-                contentHeight = $('#userDataContent').height(),
+                contentHeight = $("#slider-boot").height(),
                 resizeMessage = '<message senderId={Sender_ID}>resize({Width}, {Height})</message>';
 
             newHeight = (step - (contentHeight % step)) + contentHeight;
 
             resizeMessage = resizeMessage.replace("{Sender_ID}", this.senderId);
-            resizeMessage = resizeMessage.replace("{Height}", slider_height);
-            resizeMessage = resizeMessage.replace("{Width}", slider_width);
+            resizeMessage = resizeMessage.replace("{Height}", newHeight);
+            resizeMessage = resizeMessage.replace("{Width}", "100%");
 
             window.parent.postMessage(resizeMessage, "*");
         }
     };
 
     Communica.Part.init();
+}
+
+// Function to retrieve a query string value.
+// For production purposes you may want to use
+// a library to handle the query string.
+function getQueryStringParameter(paramToRetrieve) {
+    var params =
+        document.URL.split("?")[1].split("&");
+    var strParams = "";
+    for (var i = 0; i < params.length; i = i + 1) {
+        var singleParam = params[i].split("=");
+        if (singleParam[0] == paramToRetrieve)
+            return singleParam[1];
+    }
+}
+
+//TODO: Implement this method
+function createImageLibrary(hostWebUrl) {
+    debugger;
+    jQuery.ajax({
+        url: "https:/_api/web/lists",
+        type: "POST",
+        data: JSON.stringify({
+            '__metadata': { 'type': 'SP.List' }, 'AllowContentTypes': true,
+            'BaseTemplate': 100, 'ContentTypesEnabled': true, 'Description': 'My list description', 'Title': 'Test'
+        }
+    ),
+        headers: {
+            "accept": "application/json;odata=verbose",
+            "content-type": "application/json;odata=verbose",
+            "X-RequestDigest": $("#__REQUESTDIGEST").val()
+        },
+        success: getLibraryFromUrl,
+        error: OnGetListItemFailure
+    });
 }

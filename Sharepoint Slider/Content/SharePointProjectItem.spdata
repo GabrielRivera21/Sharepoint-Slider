@@ -7,5 +7,7 @@
     <ProjectItemFile Source="default\bullets.png" Target="Content\default\" Type="ElementFile" />
     <ProjectItemFile Source="default\default.css" Target="Content\default\" Type="ElementFile" />
     <ProjectItemFile Source="default\loading.gif" Target="Content\default\" Type="ElementFile" />
+    <ProjectItemFile Source="blue.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="default.css" Target="Content\" Type="ElementFile" />
   </Files>
 </ProjectItem>

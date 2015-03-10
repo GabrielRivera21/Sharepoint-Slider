@@ -6,5 +6,7 @@
     <File Path="Content\default\bullets.png" Url="Content/default/bullets.png" ReplaceContent="TRUE" />
     <File Path="Content\default\default.css" Url="Content/default/default.css" ReplaceContent="TRUE" />
     <File Path="Content\default\loading.gif" Url="Content/default/loading.gif" ReplaceContent="TRUE" />
+    <File Path="Content\Blue.css" Url="Content/Blue.css" ReplaceContent="TRUE" />
+    <File Path="Content\default.css" Url="Content/default.css" ReplaceContent="TRUE" />
   </Module>
 </Elements>
