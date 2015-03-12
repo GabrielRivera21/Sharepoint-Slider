@@ -1,14 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <ClientWebPart Name="Gaby Sharepoint Slider" Title="Gaby Sharepoint Slider" 
-                 Description="A Carousel Slider App Part, Where you can select an Image Library
-                 and modify it's height, width and speed Intervals at which it changes images." 
+                 Description="A Carousel Slider App Part for Sharepoint, Including a Custom Image Library, where you can upload your photos to the Carousel, add Captions, links inside the pictures, and change colors to the Slider" 
                  DefaultWidth="300" DefaultHeight="500">
 
     <!-- Content element identifies the location of the page that will render inside the client web part
          Properties are referenced on the query string using the pattern _propertyName_
          Example: Src="~appWebUrl/Pages/ClientWebPart1.aspx?Property1=_property1_" -->
-    <Content Type="html" Src="~appWebUrl/Pages/Gaby_Slider.aspx?DefaultImageLibrary=_DefaultImageLibrary_&amp;ImageLibrary=_ImageLibrary_&amp;SliderInterval=_SliderInterval_&amp;SliderColors=_SliderColors_&amp;{StandardTokens};editmode=_editMode_" />
+    <Content Type="html" Src="~appWebUrl/Pages/Gaby_Slider.aspx?TextColors=_TextColors_&amp;CaptionBackground=_CaptionBackground_&amp;IndicatorColors=_IndicatorColors_&amp;GlyphiconColors=_GlyphiconColors_&amp;SliderInterval=_SliderInterval_&amp;SliderColors=_SliderColors_&amp;{StandardTokens};editmode=_editMode_" />
 
     <!-- Define properties in the Properties element.
          Remember to put Property Name on the Src attribute of the Content element above. -->
@@ -26,7 +25,7 @@
         Type="enum"
         RequiresDesignerPermission="true"
         DefaultValue="default"
-        WebCategory="Slider Properties"
+        WebCategory="Slider Color Properties"
         WebDisplayName="Slider Theme Color">
         <EnumItems>
           <EnumItem WebDisplayName="Default" Value="default"/>
@@ -39,6 +38,39 @@
           <EnumItem WebDisplayName="Light Blue" Value="lightBlue"/>
           <EnumItem WebDisplayName="Light Green" Value="lightGreen"/>
         </EnumItems>
+      </Property>
+
+      <Property
+        Name="GlyphiconColors"
+        Type="string"
+        RequiresDesignerPermission="true"
+        DefaultValue="ThemeDefault"
+        WebCategory="Slider Color Properties"
+        WebDisplayName="Glyphicon Colors"> 
+      </Property>
+      <Property
+        Name="IndicatorColors"
+        Type="string"
+        RequiresDesignerPermission="true"
+        DefaultValue="ThemeDefault"
+        WebCategory="Slider Color Properties"
+        WebDisplayName="Carousel Indicator Colors">
+      </Property>
+      <Property
+        Name="CaptionBackground"
+        Type="string"
+        RequiresDesignerPermission="true"
+        DefaultValue="ThemeDefault"
+        WebCategory="Slider Color Properties"
+        WebDisplayName="Caption Background Color">
+      </Property>
+      <Property
+        Name="TextColors"
+        Type="string"
+        RequiresDesignerPermission="true"
+        DefaultValue="ThemeDefault"
+        WebCategory="Slider Color Properties"
+        WebDisplayName="Caption Text Color">
       </Property>
     </Properties>
 

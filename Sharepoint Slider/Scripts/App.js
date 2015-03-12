@@ -7,7 +7,11 @@ var currentlibrary;
 var library;
 
 //Slider Properties Changes
-var slider_interval
+var slider_interval;
+var slider_glyphicon;
+var slider_indicators;
+var slider_captionBackground;
+var slider_captionText;
 
 $(document).ready(function () {
     debugger;
@@ -74,6 +78,7 @@ function OnGetListItemSuccess() {
         $('.carousel').carousel({
             interval: slider_interval
         })
+        changeCarouselColors();
         //Adjusts the iFrame
         adjustFrame();
     }
@@ -212,6 +217,31 @@ function adjustFrame() {
     Communica.Part.init();
 }
 
+function changeCarouselColors() {
+    slider_glyphicon = decodeURIComponent(getQueryStringParameter("GlyphiconColors"));
+    slider_indicators = decodeURIComponent(getQueryStringParameter("IndicatorColors"));
+    slider_captionBackground = decodeURIComponent(getQueryStringParameter("CaptionBackground"));
+    slider_captionText = decodeURIComponent(getQueryStringParameter("TextColors"));
+    if (slider_glyphicon != "ThemeDefault") {
+        $(".carousel-control").css('color', slider_glyphicon);
+        $(".carousel-control:hover").css('color', slider_glyphicon);
+        $(".carousel-control:focus, .carousel-control:hover").css('color', slider_glyphicon);
+    }
+    if (slider_indicators != "ThemeDefault") {
+        $(".carousel-indicators .active").css({
+            'color': slider_indicators,
+            'border-color': slider_indicators
+        });
+        $(".carousel-indicators li").css('border-color', slider_indicators);
+    }
+    if (slider_captionBackground != "ThemeDefault") {
+        $(".carousel-caption").css('background-color', slider_captionBackground);
+    }
+    if (slider_captionText != "ThemeDefault") {
+        $(".carousel-caption p").css('color', slider_captionText);
+    }
+}
+
 // Function to retrieve a query string value.
 // For production purposes you may want to use
 // a library to handle the query string.
@@ -224,25 +254,4 @@ function getQueryStringParameter(paramToRetrieve) {
         if (singleParam[0] == paramToRetrieve)
             return singleParam[1];
     }
-}
-
-//TODO: Implement this method
-function createImageLibrary(hostWebUrl) {
-    debugger;
-    jQuery.ajax({
-        url: "https:/_api/web/lists",
-        type: "POST",
-        data: JSON.stringify({
-            '__metadata': { 'type': 'SP.List' }, 'AllowContentTypes': true,
-            'BaseTemplate': 100, 'ContentTypesEnabled': true, 'Description': 'My list description', 'Title': 'Test'
-        }
-    ),
-        headers: {
-            "accept": "application/json;odata=verbose",
-            "content-type": "application/json;odata=verbose",
-            "X-RequestDigest": $("#__REQUESTDIGEST").val()
-        },
-        success: getLibraryFromUrl,
-        error: OnGetListItemFailure
-    });
 }
