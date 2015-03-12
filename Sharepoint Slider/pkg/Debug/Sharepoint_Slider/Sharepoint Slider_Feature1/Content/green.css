@@ -1,0 +1,25 @@
+﻿.carousel-caption {
+  background-color: rgba(33, 124, 2, 1);
+}
+
+.carousel-control {
+    color: #339B00;
+}
+
+.carousel-control:hover {
+    color: #339B00;
+}
+
+.carousel-control:focus, .carousel-control:hover {
+    color: #339B00;
+}
+
+.carousel-indicators .active {
+    background-color: #339B00;
+    border-color: #339B00;
+}
+
+.carousel-indicators li{
+    border-color: #339B00;
+}
+

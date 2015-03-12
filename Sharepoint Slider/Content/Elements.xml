@@ -2,11 +2,14 @@
 <Elements xmlns="http://schemas.microsoft.com/sharepoint/">
   <Module Name="Content">
     <File Path="Content\App.css" Url="Content/App.css" ReplaceContent="TRUE" />
-    <File Path="Content\default\arrows.png" Url="Content/default/arrows.png" ReplaceContent="TRUE" />
-    <File Path="Content\default\bullets.png" Url="Content/default/bullets.png" ReplaceContent="TRUE" />
-    <File Path="Content\default\default.css" Url="Content/default/default.css" ReplaceContent="TRUE" />
-    <File Path="Content\default\loading.gif" Url="Content/default/loading.gif" ReplaceContent="TRUE" />
     <File Path="Content\Blue.css" Url="Content/Blue.css" ReplaceContent="TRUE" />
     <File Path="Content\default.css" Url="Content/default.css" ReplaceContent="TRUE" />
+    <File Path="Content\red.css" Url="Content/red.css" ReplaceContent="TRUE" />
+    <File Path="Content\orange.css" Url="Content/orange.css" ReplaceContent="TRUE" />
+    <File Path="Content\green.css" Url="Content/green.css" ReplaceContent="TRUE" />
+    <File Path="Content\pink.css" Url="Content/pink.css" ReplaceContent="TRUE" />
+    <File Path="Content\lightGreen.css" Url="Content/lightGreen.css" ReplaceContent="TRUE" />
+    <File Path="Content\lightBlue.css" Url="Content/lightBlue.css" ReplaceContent="TRUE" />
+    <File Path="Content\purple.css" Url="Content/purple.css" ReplaceContent="TRUE" />
   </Module>
 </Elements>

@@ -3,11 +3,14 @@
   <Files>
     <ProjectItemFile Source="Elements.xml" Target="Content\" Type="ElementManifest" />
     <ProjectItemFile Source="App.css" Target="Content\" Type="ElementFile" />
-    <ProjectItemFile Source="default\arrows.png" Target="Content\default\" Type="ElementFile" />
-    <ProjectItemFile Source="default\bullets.png" Target="Content\default\" Type="ElementFile" />
-    <ProjectItemFile Source="default\default.css" Target="Content\default\" Type="ElementFile" />
-    <ProjectItemFile Source="default\loading.gif" Target="Content\default\" Type="ElementFile" />
     <ProjectItemFile Source="blue.css" Target="Content\" Type="ElementFile" />
     <ProjectItemFile Source="default.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="red.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="orange.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="green.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="pink.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="lightGreen.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="lightBlue.css" Target="Content\" Type="ElementFile" />
+    <ProjectItemFile Source="purple.css" Target="Content\" Type="ElementFile" />
   </Files>
 </ProjectItem>

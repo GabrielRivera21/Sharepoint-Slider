@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <ListInstance Title="Gaby Slider Images Library" OnQuickLaunch="TRUE" TemplateType="109" Url="Lists/GabySliderImagesLibrary" Description="My List Instance"></ListInstance>
+</Elements>

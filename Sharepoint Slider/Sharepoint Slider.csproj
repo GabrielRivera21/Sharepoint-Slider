@@ -43,28 +43,59 @@
     <UseVSHostingProcess>false</UseVSHostingProcess>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="Gaby Slider Images Library\Gaby Slider Images Library Instance\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{c8fbe252-f269-4b24-bfca-4902a7d7d73b}</SharePointProjectItemId>
+    </None>
+    <None Include="Gaby Slider Images Library\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a8e8dce9-d8b1-476f-a8a2-14a91db8a7a6}</SharePointProjectItemId>
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Gaby Slider\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{aa3e9d9a-f4b3-4eae-8a14-35dbdd298b17}</SharePointProjectItemId>
+    </None>
+    <None Include="MyPictures\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{20723e4c-fed9-478e-8812-9621dd5663a3}</SharePointProjectItemId>
     </None>
     <None Include="packages.config" />
     <None Include="Pages\SharePointProjectItem.spdata">
       <SharePointProjectItemId>{3b2cdc0f-f1e6-42a6-ac92-316a6700997e}</SharePointProjectItemId>
     </None>
+    <Content Include="Content\purple.css" />
+    <Content Include="Content\lightBlue.css" />
+    <Content Include="Content\lightGreen.css" />
+    <Content Include="Content\pink.css" />
+    <Content Include="Content\green.css" />
+    <Content Include="Content\orange.css" />
+    <Content Include="Content\red.css" />
     <Content Include="Content\blue.css" />
     <Content Include="Content\default.css" />
-    <Content Include="Content\default\arrows.png" />
-    <Content Include="Content\default\bullets.png" />
-    <Content Include="Content\default\default.css" />
-    <Content Include="Content\default\loading.gif" />
     <Content Include="Elements.xml" />
+    <Content Include="Gaby Slider Images Library\AllItems.aspx" />
+    <Content Include="Gaby Slider Images Library\DispForm.aspx" />
+    <Content Include="Gaby Slider Images Library\EditForm.aspx" />
+    <Content Include="Gaby Slider Images Library\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Gaby Slider Images Library\Gaby Slider Images Library Instance\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Gaby Slider Images Library\schema.xml" />
+    <Content Include="Gaby Slider Images Library\Selected.aspx" />
+    <Content Include="Gaby Slider Images Library\SlidShow.aspx" />
+    <Content Include="Gaby Slider Images Library\Upload.aspx" />
+    <Content Include="Gaby Slider Images Library\WebFldr.aspx" />
     <Content Include="Gaby Slider\Elements.xml">
       <OpcRelationship>feature-elementmanifest</OpcRelationship>
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Images\nemo.jpg" />
-    <Content Include="Images\toystory.jpg" />
-    <Content Include="Images\up.jpg" />
-    <Content Include="Images\walle.jpg" />
+    <Content Include="MyPictures\nemo.jpg" />
+    <Content Include="MyPictures\toystory.jpg" />
+    <Content Include="MyPictures\walle.jpg" />
+    <Content Include="MyPictures\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="MyPictures\Sample.txt" />
+    <Content Include="MyPictures\up.jpg" />
     <Content Include="Pages\Elements.xml">
       <SubType>Designer</SubType>
     </Content>
@@ -79,6 +110,7 @@
       <SharePointProjectItemId>{1fd5a3b3-d356-4050-96b4-3dd55778a368}</SharePointProjectItemId>
     </None>
     <Content Include="Pages\Gaby_Slider.aspx" />
+    <Content Include="Scripts\App-CrossDomainReference.js" />
     <Content Include="Scripts\Elements.xml" />
     <Content Include="Scripts\App.js" />
     <Content Include="Scripts\jquery-1.9.1.intellisense.js" />

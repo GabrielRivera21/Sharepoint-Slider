@@ -1,8 +1,5 @@
 ﻿var libraryName;
-var hostWebUrl;
-var appWebUrl;
 var ctx;
-var appCtxSite;
 var web;
 var libraries;
 var listEnumerator;
@@ -14,9 +11,7 @@ var slider_interval
 
 $(document).ready(function () {
     debugger;
-    hostWebUrl = decodeURIComponent(getQueryStringParameter('SPHostUrl'));
-    appWebUrl = decodeURIComponent(getQueryStringParameter('SPAppWebUrl'));
-    libraryName = decodeURIComponent(getQueryStringParameter("ImageLibrary"));
+    libraryName = "Gaby Slider Images Library"; //References Library Created inside App
     slider_interval = decodeURIComponent(getQueryStringParameter("SliderInterval"));
     //Adds the CSS style the User chooses
     var themeColorCss = decodeURIComponent(getQueryStringParameter("SliderColors"));
@@ -25,9 +20,8 @@ $(document).ready(function () {
 });
 
 function getLibraryFromUrl() {
-    ctx = new SP.ClientContext(appWebUrl);
-    appCtxSite = new SP.AppContextSite(ctx, hostWebUrl);
-    web = appCtxSite.get_web();
+    ctx = new SP.ClientContext.get_current();
+    web = ctx.get_web();
     libraries = web.get_lists();
     ctx.load(libraries);
     ctx.executeQueryAsync(IsListExist, OnGetListItemFailure);
@@ -47,7 +41,7 @@ function IsListExist() {
         }
     }
     if (!isListAvail && libraryName != "") {
-        console.log('Please select a Library that is in your site. You can select this at Slider Properties.');
+        alert('Please select a Library that is in your site. You can select this at Slider Properties.');
     }
 
 }

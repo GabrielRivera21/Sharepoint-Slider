@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.ListDefinition" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="Gaby Slider Images Library\" Type="ElementManifest" />
+    <ProjectItemFile Source="AllItems.aspx" Target="Gaby Slider Images Library\" Type="ElementFile" />
+    <ProjectItemFile Source="DispForm.aspx" Target="Gaby Slider Images Library\" Type="ElementFile" />
+    <ProjectItemFile Source="EditForm.aspx" Target="Gaby Slider Images Library\" Type="ElementFile" />
+    <ProjectItemFile Source="schema.xml" Target="Gaby Slider Images Library\" Type="ElementFile" />
+    <ProjectItemFile Source="Selected.aspx" Target="Gaby Slider Images Library\" Type="ElementFile" />
+    <ProjectItemFile Source="SlidShow.aspx" Target="Gaby Slider Images Library\" Type="ElementFile" />
+    <ProjectItemFile Source="Upload.aspx" Target="Gaby Slider Images Library\" Type="ElementFile" />
+    <ProjectItemFile Source="WebFldr.aspx" Target="Gaby Slider Images Library\" Type="ElementFile" />
+  </Files>
+  <ExtensionData>
+    <ExtensionDataItem Key="Microsoft.VisualStudio.SharePoint.ListSettings.ListFieldsContentTypeID" Value="0x01010040b52a0c3f8843309717c4e7b3096050" />
+  </ExtensionData>
+</ProjectItem>

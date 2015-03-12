@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ProjectItem Type="Microsoft.VisualStudio.SharePoint.Module" DefaultFile="Elements.xml" SupportedTrustLevels="All" SupportedDeploymentScopes="Web, Site" xmlns="http://schemas.microsoft.com/VisualStudio/2010/SharePointTools/SharePointProjectItemModel">
+  <Files>
+    <ProjectItemFile Source="Elements.xml" Target="MyPictures\" Type="ElementManifest" />
+    <ProjectItemFile Source="Sample.txt" Target="MyPictures\" Type="ElementFile" />
+    <ProjectItemFile Source="up.jpg" Target="MyPictures\" Type="ElementFile" />
+    <ProjectItemFile Source="walle.jpg" Target="MyPictures\" Type="ElementFile" />
+    <ProjectItemFile Source="toystory.jpg" Target="MyPictures\" Type="ElementFile" />
+    <ProjectItemFile Source="nemo.jpg" Target="MyPictures\" Type="ElementFile" />
+  </Files>
+</ProjectItem>

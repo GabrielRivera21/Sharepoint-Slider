@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Module Name="MyPictures" Url="Lists/GabySliderImagesLibrary">
+    <File Path="MyPictures\up.jpg" Url="up.jpg" Type="GhostableInLibrary" />
+    <File Path="MyPictures\walle.jpg" Url="walle.jpg" Type="GhostableInLibrary" />
+    <File Path="MyPictures\toystory.jpg" Url="toystory.jpg" Type="GhostableInLibrary" />
+    <File Path="MyPictures\nemo.jpg" Url="nemo.jpg" Type="GhostableInLibrary" />
+  </Module>
+</Elements>

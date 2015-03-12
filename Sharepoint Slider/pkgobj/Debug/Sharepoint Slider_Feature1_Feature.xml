@@ -10,21 +10,37 @@
     <ElementFile Location="Scripts\jquery-1.9.1.js" />
     <ElementFile Location="Scripts\jquery-1.9.1.intellisense.js" />
     <ElementFile Location="Scripts\App.js" />
+    <ElementFile Location="Scripts\App-CrossDomainReference.js" />
     <ElementManifest Location="Content\Elements.xml" />
     <ElementFile Location="Content\App.css" />
-    <ElementFile Location="Content\default\arrows.png" />
-    <ElementFile Location="Content\default\bullets.png" />
-    <ElementFile Location="Content\default\default.css" />
-    <ElementFile Location="Content\default\loading.gif" />
     <ElementFile Location="Content\blue.css" />
     <ElementFile Location="Content\default.css" />
+    <ElementFile Location="Content\red.css" />
+    <ElementFile Location="Content\orange.css" />
+    <ElementFile Location="Content\green.css" />
+    <ElementFile Location="Content\pink.css" />
+    <ElementFile Location="Content\lightGreen.css" />
+    <ElementFile Location="Content\lightBlue.css" />
+    <ElementFile Location="Content\purple.css" />
     <ElementManifest Location="Images\Elements.xml" />
     <ElementFile Location="Images\AppIcon.png" />
-    <ElementFile Location="Images\nemo.jpg" />
-    <ElementFile Location="Images\toystory.jpg" />
-    <ElementFile Location="Images\up.jpg" />
-    <ElementFile Location="Images\walle.jpg" />
     <ElementManifest Location="Elements.xml" />
+    <ElementManifest Location="MyPictures\Elements.xml" />
+    <ElementFile Location="MyPictures\Sample.txt" />
+    <ElementFile Location="MyPictures\up.jpg" />
+    <ElementFile Location="MyPictures\walle.jpg" />
+    <ElementFile Location="MyPictures\toystory.jpg" />
+    <ElementFile Location="MyPictures\nemo.jpg" />
+    <ElementManifest Location="Gaby Slider Images Library Instance\Elements.xml" />
+    <ElementManifest Location="Gaby Slider Images Library\Elements.xml" />
+    <ElementFile Location="Gaby Slider Images Library\AllItems.aspx" />
+    <ElementFile Location="Gaby Slider Images Library\DispForm.aspx" />
+    <ElementFile Location="Gaby Slider Images Library\EditForm.aspx" />
+    <ElementFile Location="Gaby Slider Images Library\schema.xml" />
+    <ElementFile Location="Gaby Slider Images Library\Selected.aspx" />
+    <ElementFile Location="Gaby Slider Images Library\SlidShow.aspx" />
+    <ElementFile Location="Gaby Slider Images Library\Upload.aspx" />
+    <ElementFile Location="Gaby Slider Images Library\WebFldr.aspx" />
   </ElementManifests>
   <UpgradeActions>
     <VersionRange>
@@ -34,6 +50,9 @@
         <ElementManifest Location="Content\Elements.xml" />
         <ElementManifest Location="Images\Elements.xml" />
         <ElementManifest Location="Elements.xml" />
+        <ElementManifest Location="MyPictures\Elements.xml" />
+        <ElementManifest Location="Gaby Slider Images Library Instance\Elements.xml" />
+        <ElementManifest Location="Gaby Slider Images Library\Elements.xml" />
       </ApplyElementManifests>
     </VersionRange>
   </UpgradeActions>

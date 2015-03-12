@@ -3,9 +3,5 @@
   <Files>
     <ProjectItemFile Source="Elements.xml" Target="Images\" Type="ElementManifest" />
     <ProjectItemFile Source="AppIcon.png" Target="Images\" Type="ElementFile" />
-    <ProjectItemFile Source="nemo.jpg" Target="Images\" Type="ElementFile" />
-    <ProjectItemFile Source="toystory.jpg" Target="Images\" Type="ElementFile" />
-    <ProjectItemFile Source="up.jpg" Target="Images\" Type="ElementFile" />
-    <ProjectItemFile Source="walle.jpg" Target="Images\" Type="ElementFile" />
   </Files>
 </ProjectItem>
