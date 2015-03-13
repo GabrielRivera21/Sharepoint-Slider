@@ -32,9 +32,7 @@
 <%-- The markup and script in the following Content element will be placed in the <body> of the page --%>
 <asp:Content ContentPlaceHolderID="PlaceHolderMain" runat="server">
     <a href="/teams/dev/SharepointSlider/Lists/GabySliderImagesLibrary">Manage Slider Images</a>
-    <div id="instructions">
-
-    </div>
+    
 </asp:Content>
 
 

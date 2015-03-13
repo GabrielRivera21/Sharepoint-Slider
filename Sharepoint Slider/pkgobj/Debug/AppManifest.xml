@@ -7,8 +7,8 @@
      SharePointMinVersion="16.0.0.0"
 >
   <Properties>
-    <Title>Sharepoint Slider</Title>
-    <StartPage>~appWebUrl/Pages/Default.aspx?{StandardTokens}</StartPage>
+    <Title>Sharepoint Slider Image Manager</Title>
+    <StartPage>~appWebUrl/Lists/GabySliderImagesLibrary?{StandardTokens}</StartPage>
   </Properties>
 
   <AppPrincipal>
