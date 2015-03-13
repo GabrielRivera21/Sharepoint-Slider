@@ -45,7 +45,7 @@ function IsListExist() {
         }
     }
     if (!isListAvail && libraryName != "") {
-        alert('Please select a Library that is in your site. You can select this at Slider Properties.');
+        console.log('Library could not be created. Open up an issue at https://github.com/GabrielRivera21/Sharepoint-Slider');
     }
 
 }
@@ -217,6 +217,8 @@ function adjustFrame() {
     Communica.Part.init();
 }
 
+//Grabs the Changes from Slider Color Properties and applies them
+//to the Carousel if it's not the ThemeDefault.
 function changeCarouselColors() {
     slider_glyphicon = decodeURIComponent(getQueryStringParameter("GlyphiconColors"));
     slider_indicators = decodeURIComponent(getQueryStringParameter("IndicatorColors"));
@@ -228,11 +230,13 @@ function changeCarouselColors() {
         $(".carousel-control:focus, .carousel-control:hover").css('color', slider_glyphicon);
     }
     if (slider_indicators != "ThemeDefault") {
-        $(".carousel-indicators .active").css({
-            'color': slider_indicators,
-            'border-color': slider_indicators
-        });
         $(".carousel-indicators li").css('border-color', slider_indicators);
+        $("head").append('<style> ' +
+            '.carousel-indicators .active { ' +
+                'background-color: ' + slider_indicators + '; ' +
+                'border-color: ' + slider_indicators + '; ' +
+            "}" +
+            "</style>");
     }
     if (slider_captionBackground != "ThemeDefault") {
         $(".carousel-caption").css('background-color', slider_captionBackground);
