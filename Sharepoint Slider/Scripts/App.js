@@ -204,7 +204,7 @@ function adjustFrame() {
 
             if (newHeight === 30) {
                 //Basically it says that the contentHeight is 0,
-                //So we put an initial height from User retrieved from Slider Properties.
+                //So we put a big enough height and set it to #slider-boot and the iFrame.
                 slider_initialHeight = 500;
                 newHeight = slider_initialHeight;
                 $("#slider-boot").height(slider_initialHeight);
