@@ -7,7 +7,7 @@
     <!-- Content element identifies the location of the page that will render inside the client web part
          Properties are referenced on the query string using the pattern _propertyName_
          Example: Src="~appWebUrl/Pages/ClientWebPart1.aspx?Property1=_property1_" -->
-    <Content Type="html" Src="~appWebUrl/Pages/Gaby_Slider.aspx?TextColors=_TextColors_&amp;CaptionBackground=_CaptionBackground_&amp;IndicatorColors=_IndicatorColors_&amp;GlyphiconColors=_GlyphiconColors_&amp;SliderInterval=_SliderInterval_&amp;SliderColors=_SliderColors_&amp;{StandardTokens};editmode=_editMode_" />
+    <Content Type="html" Src="~appWebUrl/Pages/Gaby_Slider.aspx?TextColors=_TextColors_&amp;CaptionBackground=_CaptionBackground_&amp;IndicatorColors=_IndicatorColors_&amp;GlyphiconColors=_GlyphiconColors_&amp;SliderHeight=_SliderHeight_&amp;SliderInterval=_SliderInterval_&amp;SliderColors=_SliderColors_&amp;{StandardTokens};editmode=_editMode_" />
 
     <!-- Define properties in the Properties element.
          Remember to put Property Name on the Src attribute of the Content element above. -->
@@ -20,6 +20,15 @@
         WebCategory="Slider Properties"
         WebDisplayName="Interval for the Slider">
       </Property>
+      <Property
+        Name="SliderHeight"
+        Type="int"
+        RequiresDesignerPermission="true"
+        DefaultValue="500"
+        WebCategory="Slider Properties"
+        WebDisplayName="Slider Initial Height">
+      </Property>
+      
       <Property
         Name="SliderColors"
         Type="enum"
@@ -39,7 +48,6 @@
           <EnumItem WebDisplayName="Light Green" Value="lightGreen"/>
         </EnumItems>
       </Property>
-
       <Property
         Name="GlyphiconColors"
         Type="string"

@@ -12,9 +12,9 @@ var slider_glyphicon;
 var slider_indicators;
 var slider_captionBackground;
 var slider_captionText;
+var slider_initialHeight;
 
 $(document).ready(function () {
-    debugger;
     libraryName = "Gaby Slider Images Library"; //References Library Created inside App
     slider_interval = decodeURIComponent(getQueryStringParameter("SliderInterval"));
     //Adds the CSS style the User chooses
@@ -32,7 +32,6 @@ function getLibraryFromUrl() {
 }
 
 function IsListExist() {
-    debugger;
     var isListAvail = false;
     listEnumerator = libraries.getEnumerator();
     while (listEnumerator.moveNext() && !isListAvail && libraryName != "") {
@@ -52,7 +51,6 @@ function IsListExist() {
 
 //Get image collection from Library  
 function getListItemCollection() {
-    debugger;
     //Get the library by Title  
     library = libraries.getByTitle(libraryName);
     //get two items on library using caml Query  
@@ -68,7 +66,6 @@ function getListItemCollection() {
 
 //Get Image URL from Library  
 function OnGetListItemSuccess() {
-    debugger;
     //get_count() is used to get the items from current library  
     if (itemCollection.get_count() > 0) {
         var enumerator = itemCollection.getEnumerator();
@@ -81,6 +78,7 @@ function OnGetListItemSuccess() {
         changeCarouselColors();
         //Adjusts the iFrame
         adjustFrame();
+       
     }
 }
 
@@ -115,7 +113,6 @@ function constructCarousel(enumerator) {
 
 //Adds the Images to the Carousel by Viewing which images are active
 function addImagesToCarousel(enumerator) {
-    debugger;
     var i = 0; //index for indicator
     var ImageUrl;
     var ImageCaption;
@@ -171,14 +168,13 @@ function addImagesToCarousel(enumerator) {
             $(".carousel-inner").append(
                  '<div class="item' + itemActive + '">' +
                       hrefTagStart +
-                        '<img src="' + ImageUrl + '" alt="Hello"/>' +
+                        '<img id="slider-image' + i + '" src="' + ImageUrl + '" alt="Hello"/>' +
                       hrefTagEnd +
                      containerCaption + 
                  '</div>');
         }
     }
 }
-
 
 function adjustFrame() {
     window.Communica = window.Communica || {};
@@ -205,6 +201,16 @@ function adjustFrame() {
                 resizeMessage = '<message senderId={Sender_ID}>resize({Width}, {Height})</message>';
 
             newHeight = (step - (contentHeight % step)) + contentHeight;
+
+            if (newHeight === 30) {
+                //Basically it says that the content height is 0,
+                //So we put an initial height from User retrieved from Slider Properties.
+                slider_initialHeight = decodeURIComponent(getQueryStringParameter("SliderHeight"));
+                newHeight = slider_initialHeight;
+                $("#slider-boot").height(slider_initialHeight);
+            } else {
+                $("#slider-boot").removeAttr("style");
+            }
 
             resizeMessage = resizeMessage.replace("{Sender_ID}", this.senderId);
             resizeMessage = resizeMessage.replace("{Height}", newHeight);
@@ -259,3 +265,9 @@ function getQueryStringParameter(paramToRetrieve) {
             return singleParam[1];
     }
 }
+
+
+//If the User resizes the window, adjust the #container height
+$(window).on("resize", adjustFrame);
+
+

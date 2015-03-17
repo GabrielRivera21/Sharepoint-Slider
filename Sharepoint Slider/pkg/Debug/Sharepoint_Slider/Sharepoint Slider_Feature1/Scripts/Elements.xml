@@ -7,5 +7,6 @@
     <File Path="Scripts\jquery-1.9.1.intellisense.js" Url="Scripts/jquery-1.9.1.intellisense.js" ReplaceContent="TRUE" />
     <File Path="Scripts\App.js" Url="Scripts/App.js" ReplaceContent="TRUE" />
     <File Path="Scripts\App-CrossDomainReference.js" Url="Scripts/App-CrossDomainReference.js" ReplaceContent="TRUE" />
+    <File Path="Scripts\jquery-appear.js" Url="Scripts/jquery-appear.js" ReplaceContent="TRUE" />
   </Module>
 </Elements>

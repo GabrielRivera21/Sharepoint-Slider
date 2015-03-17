@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Description="SharePoint App Feature" Id="e098065f-624d-407d-9c7d-7df48a0eb8da" Scope="Web" Title="Sharepoint Slider Feature1" Version="1.0.0.0">
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Description="SharePoint App Feature" Id="e098065f-624d-407d-9c7d-7df48a0eb8da" Scope="Web" Title="Sharepoint Slider Feature1" Version="1.0.0.2">
   <ElementManifests>
     <ElementManifest Location="Pages\Elements.xml" />
     <ElementFile Location="Pages\Default.aspx" />
@@ -11,6 +11,7 @@
     <ElementFile Location="Scripts\jquery-1.9.1.intellisense.js" />
     <ElementFile Location="Scripts\App.js" />
     <ElementFile Location="Scripts\App-CrossDomainReference.js" />
+    <ElementFile Location="Scripts\jquery-appear.js" />
     <ElementManifest Location="Content\Elements.xml" />
     <ElementFile Location="Content\App.css" />
     <ElementFile Location="Content\blue.css" />
