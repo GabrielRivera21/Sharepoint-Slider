@@ -203,9 +203,9 @@ function adjustFrame() {
             newHeight = (step - (contentHeight % step)) + contentHeight;
 
             if (newHeight === 30) {
-                //Basically it says that the content height is 0,
+                //Basically it says that the contentHeight is 0,
                 //So we put an initial height from User retrieved from Slider Properties.
-                slider_initialHeight = decodeURIComponent(getQueryStringParameter("SliderHeight"));
+                slider_initialHeight = 500;
                 newHeight = slider_initialHeight;
                 $("#slider-boot").height(slider_initialHeight);
             } else {
@@ -230,6 +230,7 @@ function changeCarouselColors() {
     slider_indicators = decodeURIComponent(getQueryStringParameter("IndicatorColors"));
     slider_captionBackground = decodeURIComponent(getQueryStringParameter("CaptionBackground"));
     slider_captionText = decodeURIComponent(getQueryStringParameter("TextColors"));
+
     if (slider_glyphicon != "ThemeDefault") {
         $(".carousel-control").css('color', slider_glyphicon);
         $(".carousel-control:hover").css('color', slider_glyphicon);
@@ -266,8 +267,5 @@ function getQueryStringParameter(paramToRetrieve) {
     }
 }
 
-
-//If the User resizes the window, adjust the #container height
+//If the User resizes the window, adjust the iFrame
 $(window).on("resize", adjustFrame);
-
-

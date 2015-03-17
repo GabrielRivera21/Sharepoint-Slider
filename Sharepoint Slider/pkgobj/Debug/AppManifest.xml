@@ -3,7 +3,7 @@
 <!--Created:cb85b80c-f585-40ff-8bfc-12ff4d0e34a9-->
 <App xmlns="http://schemas.microsoft.com/sharepoint/2012/app/manifest" Name="SharepointSlider" ProductID="{3b2cdc0f-f1e6-42a6-ac92-316a6700997e}" Version="1.0.0.2" SharePointMinVersion="16.0.0.0">
   <Properties>
-    <Title>Gaby Sharepoint Slider</Title>
+    <Title>Gaby Slider</Title>
     <StartPage>~appWebUrl/Lists/GabySliderImagesLibrary?{StandardTokens}</StartPage>
   </Properties>
   <AppPrincipal>
